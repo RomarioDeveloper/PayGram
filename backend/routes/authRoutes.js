@@ -1,7 +1,8 @@
-const express = require("express");
-const { authMiddleware } = require("../middleware/authMiddleware.js");
+import express from "express";
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
-router.post("/login", authMiddleware);
 
-module.exports = router;
+router.post("/login", authMiddleware); // Авторизация + сохранение в БД
+
+export default router;
